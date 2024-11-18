@@ -11,7 +11,6 @@ type SignUpForm = {
   email: string;
   password: string;
   confirmPassword: string;
-  // acceptTerms: boolean;
 };
 
 /** The sign up page. */
@@ -37,9 +36,7 @@ const SignUp = () => {
   });
 
   const onSubmit = async (data: SignUpForm) => {
-    // console.log(JSON.stringify(data, null, 2));
     await createUser(data);
-    // After creating, signIn with redirect to the add page
     await signIn('credentials', { callbackUrl: '/add', ...data });
   };
 
@@ -98,6 +95,7 @@ const SignUp = () => {
               </Card.Body>
               <Card.Footer>
                 Already have an account?
+                {' '}
                 <a href="/auth/signin">Sign in</a>
               </Card.Footer>
             </Card>

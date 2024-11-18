@@ -4,7 +4,6 @@
 
 import React from 'react';
 import { Container, Col } from 'react-bootstrap';
-import { PageIDs } from '@/utilities/ids';
 import pageStyle from '@/utilities/pageStyle';
 import { Profile, Interest, Project } from '@prisma/client';
 import ProfileForm from '@/components/ProfileForm';
@@ -22,7 +21,7 @@ const HomePage = ({
   profileInterests: Interest[];
   profileProjects: Project[];
 }) => (
-  <Container id={PageIDs.homePage} style={pageStyle}>
+  <Container style={pageStyle}>
     <Col>
       <h2 className="text-center">Your Profile</h2>
       <ProfileForm

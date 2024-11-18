@@ -13,7 +13,6 @@ type ChangePasswordForm = {
   oldpassword: string;
   password: string;
   confirmPassword: string;
-  // acceptTerms: boolean;
 };
 
 /** The change password page. */
@@ -21,7 +20,7 @@ const ChangePassword = () => {
   const { data: session, status } = useSession();
   const email = session?.user?.email || '';
   const validationSchema = Yup.object().shape({
-    oldpassword: Yup.string().required('Password is required'),
+    oldpassword: Yup.string().required('Old Password is required'),
     password: Yup.string()
       .required('Password is required')
       .min(6, 'Password must be at least 6 characters')
@@ -41,7 +40,6 @@ const ChangePassword = () => {
   });
 
   const onSubmit = async (data: ChangePasswordForm) => {
-    // console.log(JSON.stringify(data, null, 2));
     await changePassword({ email, ...data });
     await swal('Password Changed', 'Your password has been changed', 'success', { timer: 2000 });
     reset();
@@ -61,7 +59,7 @@ const ChangePassword = () => {
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group">
-                    <Form.Label>Old Passord</Form.Label>
+                    <Form.Label>Old Password</Form.Label>
                     <input
                       type="password"
                       {...register('oldpassword')}
