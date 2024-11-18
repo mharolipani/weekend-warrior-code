@@ -5,7 +5,7 @@
 
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 // eslint-disable-next-line import/extensions
 import { ComponentIDs } from '@/utilities/ids';
@@ -24,8 +24,7 @@ const NavBar: React.FC = () => {
       <Container>
         <Navbar.Brand href="/" className="align-items-center">
           <span style={{ fontWeight: 800, fontSize: '24px' }}>
-            <Image src="/images/logo.png" width={50} style={{ marginBottom: 3 }} alt="Bowfolios" />
-            Bowfolios
+            Weekend Warrior
           </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={ComponentIDs.basicNavbarNav} />
@@ -44,7 +43,7 @@ const NavBar: React.FC = () => {
               href="/profiles"
               key="profiles"
             >
-              Profiles
+              Activities
             </Nav.Link>
             <Nav.Link
               id={ComponentIDs.projectsMenuItem}
@@ -52,7 +51,7 @@ const NavBar: React.FC = () => {
               href="/projects"
               key="projects"
             >
-              Projects
+              Users
             </Nav.Link>
             <Nav.Link
               id={ComponentIDs.interestsMenuItem}
