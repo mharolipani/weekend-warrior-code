@@ -26,7 +26,6 @@
         "./src/*"
       ]
     },
-    "baseUrl": ".",  // Ensure that baseUrl is set to the root of the project
     "target": "ES2017"
   },
   "include": [
